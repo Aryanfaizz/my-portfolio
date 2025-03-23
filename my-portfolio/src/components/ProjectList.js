@@ -10,8 +10,10 @@ function ProjectList({ theme, setLoading, setError }) {
       setError(null);
       try {
         const response = await axios.get('/.netlify/functions/api/projects');
+        console.log('Projects response:', response.data); // Log the response
         setProjects(response.data);
       } catch (err) {
+        console.error('Error fetching projects:', err.message, err.response?.data); // Log detailed error
         setError('Failed to fetch projects. Please try again later.');
       } finally {
         setLoading(false);

@@ -5,7 +5,7 @@ function Navbar({ theme }) {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg ${theme === 'dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-light'} sticky-top shadow-sm`}
+      className={`navbar ${theme === 'dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-light'} sticky-top shadow-sm`}
       style={{ backdropFilter: 'blur(10px)', background: theme === 'dark' ? 'rgba(30, 30, 47, 0.8)' : 'rgba(245, 247, 250, 0.8)' }}
       aria-label="Main navigation"
     >

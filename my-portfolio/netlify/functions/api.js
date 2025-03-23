@@ -1,10 +1,11 @@
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const fs = require('fs');
+const path = require('path'); // Add path module for better file handling
 
 exports.handler = async (event) => {
-  const path = event.path.split('/').pop(); // Get the last part of the path (e.g., "weather" or "projects")
+  const pathName = event.path.split('/').pop(); // Get the last part of the path (e.g., "weather" or "projects")
   try {
-    if (path === 'weather') {
+    if (pathName === 'weather') {
       const apiKey = process.env.WEATHER_API_KEY;
       if (!apiKey) {
         return { statusCode: 500, body: JSON.stringify({ error: 'WEATHER_API_KEY not set' }) };
@@ -23,8 +24,14 @@ exports.handler = async (event) => {
         statusCode: 200,
         body: JSON.stringify(weatherData),
       };
-    } else if (path === 'projects') {
-      const projectsData = fs.readFileSync('projects.json', 'utf8');
+    } else if (pathName === 'projects') {
+      const filePath = path.resolve(__dirname, 'projects.json'); // Use absolute path
+      console.log('Attempting to read projects.json from:', filePath);
+      if (!fs.existsSync(filePath)) {
+        console.error('projects.json not found at:', filePath);
+        return { statusCode: 500, body: JSON.stringify({ error: 'projects.json file not found' }) };
+      }
+      const projectsData = fs.readFileSync(filePath, 'utf8');
       const projects = JSON.parse(projectsData);
       console.log('Sending projects:', projects);
       return {
