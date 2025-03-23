@@ -20,8 +20,10 @@ function App() {
     <div className={`min-vh-100 ${theme === 'dark' ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
       <Navbar theme={theme} />
       <div className="container">
-        <h1 className="text-center">My Portfolio</h1>
-        <ThemeSwitcher theme={theme} setTheme={setTheme} />
+        <section id="home">
+          <h1 className="text-center">My Portfolio</h1>
+          <ThemeSwitcher theme={theme} setTheme={setTheme} />
+        </section>
         
         <WeatherDisplay setLoading={setLoading} setError={setError} />
         {loading && <p className="text-center mt-3">Loading weather...</p>}
