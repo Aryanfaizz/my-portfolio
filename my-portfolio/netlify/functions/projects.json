@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Portfolio Masterpiece",
+      "author": "Jane Doe",
+      "languages": ["React", "Bootstrap", "CSS"],
+      "description": "A visually stunning portfolio showcasing my skills and projects with a modern design."
+    },
+    {
+      "name": "Weather Wizard",
+      "author": "Jane Doe",
+      "languages": ["React", "Node.js", "Axios"],
+      "description": "A real-time weather app fetching data from OpenWeatherMap for Halifax."
+    },
+    {
+      "name": "Task Tracker",
+      "author": "Jane Doe",
+      "languages": ["JavaScript", "React", "Node.js"],
+      "description": "A simple app to manage daily tasks with a clean, user-friendly interface."
+    },
+    {
+      "name": "Photo Gallery",
+      "author": "Jane Doe",
+      "languages": ["HTML", "CSS", "JavaScript"],
+      "description": "A responsive gallery to display a collection of photos with smooth animations."
+    }
+  ]
