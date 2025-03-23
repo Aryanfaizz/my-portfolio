@@ -1,0 +1,133 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.5s ease, color 0.5s ease;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-light {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+}
+
+.bg-dark {
+  background: linear-gradient(135deg, #1e1e2f 0%, #3b3b5a 100%);
+  color: #e0e0e0;
+}
+
+
+.container {
+  padding: 4rem 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #6b48ff, #00ddeb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: inherit;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #6b48ff, #00ddeb);
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.bg-dark .card {
+  background: rgba(40, 40, 60, 0.9);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn {
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover, .btn-light:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+.bg-dark .form-control {
+  border-color: #555;
+  background: #2a2a3a;
+  color: #e0e0e0;
+}
+
+.form-control:focus {
+  border-color: #6b48ff;
+  box-shadow: 0 0 5px rgba(107, 72, 255, 0.5);
+}
+
+.list-group-item {
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.bg-dark .list-group-item {
+  background: rgba(50, 50, 70, 0.8);
+}
+
+/* Weather section */
+.weather-section {
+  background: linear-gradient(45deg, #39325a, #17393b);
+  padding: 2rem;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-in-out;
+}
