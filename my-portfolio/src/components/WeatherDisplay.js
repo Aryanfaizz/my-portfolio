@@ -9,7 +9,7 @@ function WeatherDisplay({ setLoading, setError }) {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get('http://localhost:9000/.netlify/functions/api/weather');
+        const response = await axios.get('/.netlify/functions/api/weather');
         setWeather(response.data);
       } catch (err) {
         setError('Failed to fetch weather data.');

@@ -9,7 +9,7 @@ function ProjectList({ theme, setLoading, setError }) {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get('http://localhost:9000/.netlify/functions/api/projects');
+        const response = await axios.get('/.netlify/functions/api/projects');
         setProjects(response.data);
       } catch (err) {
         setError('Failed to fetch projects. Please try again later.');
@@ -21,13 +21,13 @@ function ProjectList({ theme, setLoading, setError }) {
   }, [setLoading, setError]);
 
   return (
-    <section id="projects">
+    <section id="projects" style={{ animation: 'fadeIn 1s ease-in-out' }}>
       <h2>Projects</h2>
       {projects.length > 0 ? (
         <div className="row">
           {projects.map(project => (
-            <div key={project.name} className="col-md-4 mb-3">
-              <div className={`card ${theme === 'dark' ? 'bg-dark text-light' : ''}`}>
+            <div key={project.name} className="col-md-4 mb-4">
+              <div className={`card ${theme === 'dark' ? 'bg-dark text-white' : 'text-dark'}`}>
                 <div className="card-body">
                   <h5 className="card-title">{project.name}</h5>
                   <p className="card-text"><strong>Author:</strong> {project.author}</p>
@@ -39,7 +39,7 @@ function ProjectList({ theme, setLoading, setError }) {
           ))}
         </div>
       ) : (
-        <p>No projects available.</p>
+        <p className="text-center">No projects available.</p>
       )}
     </section>
   );
