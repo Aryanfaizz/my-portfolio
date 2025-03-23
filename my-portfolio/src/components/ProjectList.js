@@ -13,7 +13,7 @@ function ProjectList({ theme, setLoading, setError }) {
         console.log('Projects response:', response.data); // Log the response
         setProjects(response.data);
       } catch (err) {
-        console.error('Error fetching projects:', err.message, err.response?.data); // Log detailed error
+        console.error('Error fetching projects:', err.message, err.response?.data); 
         setError('Failed to fetch projects. Please try again later.');
       } finally {
         setLoading(false);

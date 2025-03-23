@@ -10,7 +10,7 @@ function Navbar({ theme }) {
       aria-label="Main navigation"
     >
       <div className="container">
-        <a className="navbar-brand fw-bold" href="#home" style={{ fontSize: '1.5rem' }}>Portfolio</a>
+        <a className="navbar-brand fw-bold" href="#home" style={{ fontSize: '1.5rem' }}>Aryan's Portfolio - Lab 7</a>
         <button
           className="navbar-toggler"
           type="button"

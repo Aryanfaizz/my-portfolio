@@ -1,9 +1,9 @@
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const fs = require('fs');
-const path = require('path'); // Add path module for better file handling
+const path = require('path');
 
 exports.handler = async (event) => {
-  const pathName = event.path.split('/').pop(); // Get the last part of the path (e.g., "weather" or "projects")
+  const pathName = event.path.split('/').pop(); 
   try {
     if (pathName === 'weather') {
       const apiKey = process.env.WEATHER_API_KEY;

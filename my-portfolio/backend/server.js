@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const cors = require('cors');
-const fs = require('fs'); // Add fs to read JSON file
+const fs = require('fs');
 
 dotenv.config();
 const app = express();
